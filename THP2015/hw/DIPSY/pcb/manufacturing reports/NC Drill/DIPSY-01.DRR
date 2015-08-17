@@ -1,0 +1,16 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: DIPSY_UL1K16.PcbDoc   8/17/2015  7:52:21 PM
+---------------------------------------------------------------------------
+
+Layer Pair : L 01 (Top) to L 04 (Bot)
+ASCII RoundHoles File : DIPSY-01.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        0.15mm (5.905mil)        Round          10               12.55 mm (0.49 Inch)
+T2        0.2mm (7.874mil)         Round          1                0.00 mm (0.00 Inch)
+T3        1mm (39.37mil)           Round          14               42.18 mm (1.66 Inch)
+---------------------------------------------------------------------------
+Totals                                            25               54.73 mm (2.15 Inch)
+
+Total Processing Time (hh:mm:ss) : 00:00:00

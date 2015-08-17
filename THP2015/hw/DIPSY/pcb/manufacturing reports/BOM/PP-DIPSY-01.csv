@@ -1,0 +1,10 @@
+Comment,Description,Designator,Footprint,LibRef,Quantity,AN,Case,Mixed,Preferred,Technology,Tolerance,Trenz-Article-Number,Trenz-Stock,Value,Variant,Voltage
+
+"1µF","KON 1µF 6.3V X5R SMD 10%","C1","CAPC1005X55N","23453","1","23453","1005 (0402)","SMT","Yes","X5R","10%","","","1u","","6.3"
+"1µF","KON 1µF 6.3V X5R SMD 10%","C2","CAPC1005X55N","23453","1","23453","1005 (0402)","SMT","Yes","X5R","10%","","","1u","","6.3"
+"VREG-SOT23-3-MC","VREG-SOT23-3-MC","IC1","SOT23","VREG-SOT23-3-MC","1","","SOT23","","","","","","","VREG-SOT23-3-MC","",""
+"Pin Header 2.54 1Row 4Pins","Stiftleiste gerade 1-reihig, 4pol.","J1","STIFTLEISTE2_54 OG 1R-4","23162","1","23162","","THT","","","","","Yes","","",""
+"Pin Header 2.54 1Row 4Pins","Stiftleiste gerade 1-reihig, 4pol.","J2","STIFTLEISTE2_54 OG 1R-4","23162","1","23162","","THT","","","","","Yes","","",""
+"Pin Header 2.54 2Row 6Pins","Stiftleiste gerade 2-reihig, 6pol.","J6","STIFTLEISTE2_54 OG 2R-6","22334","1","22334","","THT","","","","","Yes","","",""
+"10K","WID SMD 10K 1% 0,063W","R1","RESC1005X40N","22750","1","22750","1005 (0402)","SMT","Yes","","1%","","","10K","",""
+"UL1K","","U1","BGA16C35P4X4_140X140X100","UL1K","1","","","","","","","","","","",""
