@@ -44,6 +44,10 @@ port (
 	);	 
 END COMPONENT;
 
+component divider is Port ( 
+        CLKOUT    : out  STD_LOGIC;
+        CLK     : in  STD_LOGIC);
+end component;
 
 
 signal clk: std_logic;
@@ -73,14 +77,20 @@ RGBA:  SB_RGBA_DRV
 		RGB2 => open
 	);	 
 
-	LED <= cnt(17);
+--	LED <= cnt(17);
+--process(clk)
+--begin
+--	if (rising_edge(clk)) then
+--		cnt <= cnt + X"00000001";
+--	end if;
+--end process;
 
-process(clk)
-begin
-	if (rising_edge(clk)) then
-		cnt <= cnt + X"00000001";
-	end if;
-end process;
+	Inst_DIV: divider PORT MAP(
+		CLK   => clk,
+		CLKOUT => LED
+	);
+
+
 
 end Behavioral;
 
