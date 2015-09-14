@@ -1,0 +1,1 @@
+place all verilog based project that works as SPI Slave here
