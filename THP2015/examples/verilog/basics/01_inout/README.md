@@ -8,6 +8,7 @@ The arduino sketch configures the  dipsy and then outputs a square wave on pin 1
 
 ## Circuit
 Arduino pin 14 -> Dipsy B4 (RGB0)
-Dipsy A4 (RGB1) -> LED cathode -> 330 Ohm -> 3.3V
+Dipsy A4 (RGB1) -> LED cathode
+LED anode -> 330 Ohm -> 3.3V
 
 The LED should blink.
