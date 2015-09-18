@@ -1,0 +1,1 @@
+Please use free InkScape to modify the SVG Graphics
