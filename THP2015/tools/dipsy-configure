@@ -1,0 +1,247 @@
+#! /usr/bin/env python
+
+
+"""
+Download configuration over SPI to DIPSY (a sub-5 USD FPGA board).
+
+Raspberry PI (excerpt from https://github.com/piface/pifacecommon/blob/master/docs/installation.rst):
+1. Remove "spi-bcm2708" from the blacklist in /etc/modprobe.d/raspi-blacklist.conf
+   or (kernel 3.18 or newer): add dtparam=spi=on to /boot/config/txt
+2. Reboot or modprobe spi-bcm2708
+3. Pinout on P1:
+	25 = GND
+	23 = SCLK
+	22 = RESET
+	21 = MISO
+	20 = GND
+	19 = MOSI
+	18 = DONE
+	17 = +3.3V
+	16 = SS
+
+Intel Edison Arduino breakout:
+1. Update to the latest version as of 2015-09-05.
+2. Pinout on J1B1:
+	 8 = RESET
+	 9 = DONE
+	10 = SS
+	11 = MOSI
+	12 = MISO
+	13 = SCK
+
+
+Beaglebone (tested on revision A3):
+1. Update to the latest Debian image.
+2. Pinout on P9
+	1,2 = GND
+	3,4 = +3.3V
+   Pinout on P8
+	 8 = RESET
+	10 = SS
+	12 = DONE
+	14 = MOSI
+	16 = SCK
+"""
+
+def split_by_size(s,n):
+	r = []
+	while len(s)>n:
+		r.append(s[0:n])
+		s = s[n:]
+	if len(s)>0:
+		r.append(s)
+	return r
+
+_ZEROES = b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+_STATUS_OK = 1
+_STATUS_NOT_DONE = 2
+_STATUS_NOT_PROGRAMMING = 3
+
+import sys
+import os
+import time
+
+_hw = None
+
+try:
+	import pifacecommon.spi as SPI
+	import RPi.GPIO as GPIO
+	_hw = "Raspberry PI"
+	_SPI_DEVICE = "/dev/spidev0.0"
+	# P1 header numbering.
+	_CRESET_PIN     = 22
+	_CDONE_PIN      = 18
+	_SS_PIN         = 16
+	def configure_dipsy(configObject):
+		# SPIDevice(bus, chip_select, spi_callback)
+		spi = SPI.SPIDevice(0, 0, None)
+		# P1 header pin numbering.
+		GPIO.setmode(GPIO.BOARD)
+		try:
+			GPIO.setup(_CRESET_PIN, GPIO.OUT)
+			GPIO.setup(_CDONE_PIN, GPIO.IN)
+			GPIO.setup(_SS_PIN, GPIO.OUT)
+
+			GPIO.output(_CRESET_PIN, GPIO.LOW)
+			GPIO.output(_SS_PIN, GPIO.LOW)
+			time.sleep(0.01)
+			GPIO.output(_CRESET_PIN, GPIO.HIGH)
+			time.sleep(0.01)
+
+			# up to 4096 possible, but no benefit.
+			config_list = split_by_size(configObject, 1024)
+			for c in config_list:
+				spi.spisend(c)
+			
+			done = GPIO.input(_CDONE_PIN)
+			spi.spisend(_ZEROES)
+			GPIO.output(_SS_PIN, GPIO.HIGH)
+
+			GPIO.setup(_CRESET_PIN, GPIO.IN)
+			GPIO.setup(_SS_PIN, GPIO.IN)
+		finally:
+			GPIO.cleanup()
+		if done:
+			return _STATUS_OK
+		else:
+			return _STATUS_NOT_DONE
+except ImportError:
+	pass
+
+if not _hw:
+	try:
+		import mraa
+		_hw = "Intel Edison"
+		_CRESET_PIN     = mraa.Gpio(8)
+		_CDONE_PIN      = mraa.Gpio(9)
+		_SS_PIN         = mraa.Gpio(10)
+		# For some reason, HW SPI didn't work.
+		_MOSI_PIN	= mraa.Gpio(11)
+		_MISO_PIN	= mraa.Gpio(12)
+		_SCK_PIN	= mraa.Gpio(13)
+		def configure_dipsy(configObject):
+			_CRESET_PIN.dir(mraa.DIR_OUT)
+			_CDONE_PIN.dir(mraa.DIR_IN)
+			_CDONE_PIN.mode(mraa.MODE_HIZ)
+			_SS_PIN.dir(mraa.DIR_OUT)
+			_MOSI_PIN.dir(mraa.DIR_OUT)
+			_MISO_PIN.dir(mraa.DIR_IN)
+			_MISO_PIN.mode(mraa.MODE_HIZ)
+			_SCK_PIN.dir(mraa.DIR_OUT)
+
+			try:
+				_CRESET_PIN.write(0)
+				_SS_PIN.write(0)
+				_MOSI_PIN.write(0)
+				_SCK_PIN.write(0)
+				time.sleep(0.01)
+				_CRESET_PIN.write(1)
+				time.sleep(0.01)
+				programming = _CDONE_PIN.read()
+
+				all_bytes = configObject + _ZEROES
+				for c in all_bytes:
+					b = ord(c)
+					for bit in range(0,8):
+						_MOSI_PIN.write((b >> (7-bit)) & 1)
+						_SCK_PIN.write(1)
+						_SCK_PIN.write(0)
+				time.sleep(0.01)
+				done = _CDONE_PIN.read()
+				_SS_PIN.write(1)
+			finally:
+				# Can't change direction, this will reset Dipsy.
+				_CRESET_PIN.mode(mraa.MODE_PULLUP)
+				_SS_PIN.mode(mraa.MODE_HIZ)
+				_MOSI_PIN.mode(mraa.MODE_HIZ)
+				_SCK_PIN.mode(mraa.MODE_HIZ)
+			if done:
+				return _STATUS_OK
+			else:
+				return _STATUS_NOT_DONE
+	except ImportError:
+		pass
+
+if not _hw:
+	try:
+		import Adafruit_BBIO.GPIO as GPIO
+		_hw = "Beaglebone"
+
+		# P8
+		_CRESET_PIN     = "P8_8"
+		_SS_PIN         = "P8_10"
+		_CDONE_PIN      = "P8_12"
+		# HW SPI by default not enabled on Beaglebone.
+		_MOSI_PIN	= "P8_14"
+		_SCK_PIN	= "P8_16"
+
+		def configure_dipsy(configObject):
+			try:
+				GPIO.setup(_CRESET_PIN, GPIO.OUT)
+				GPIO.setup(_CDONE_PIN, GPIO.IN)
+				GPIO.setup(_SS_PIN, GPIO.OUT)
+				GPIO.setup(_MOSI_PIN, GPIO.OUT)
+				GPIO.setup(_SCK_PIN, GPIO.OUT)
+
+				GPIO.output(_CRESET_PIN, GPIO.LOW)
+				GPIO.output(_SS_PIN, GPIO.LOW)
+				GPIO.output(_MOSI_PIN, GPIO.LOW)
+				GPIO.output(_SCK_PIN, GPIO.LOW)
+				time.sleep(0.01)
+				GPIO.output(_CRESET_PIN, GPIO.HIGH)
+				time.sleep(0.01)
+
+				all_bytes = configObject + _ZEROES
+				for c in all_bytes:
+					b = ord(c)
+					for bit in range(0,8):
+						if (b >> (7-bit)) & 1:
+							GPIO.output(_MOSI_PIN, GPIO.HIGH)
+						else:
+							GPIO.output(_MOSI_PIN, GPIO.LOW)
+						GPIO.output(_SCK_PIN, GPIO.HIGH)
+						GPIO.output(_SCK_PIN, GPIO.LOW)
+				
+				time.sleep(0.01)
+				done = GPIO.input(_CDONE_PIN)
+				GPIO.output(_SS_PIN, GPIO.HIGH)
+
+				GPIO.setup(_CRESET_PIN, GPIO.IN)
+				GPIO.setup(_SS_PIN, GPIO.IN)
+			finally:
+				GPIO.cleanup()
+			if done:
+				return _STATUS_OK
+			else:
+				return _STATUS_NOT_DONE
+	except ImportError:
+		pass
+
+
+if not _hw:
+	print("Unknown hardware platform.")
+	sys.exit(2)
+else:
+	print("Hardware platform: " + _hw)
+
+if len(sys.argv)<2:
+	print "No configuration file for DIPSY specified on the command line"
+	sys.exit(1)
+
+input_filename = sys.argv[1]
+print("Input file: " + input_filename)
+config_bytes = open(input_filename, "rb").read()
+print("Read " + str(len(config_bytes)) + " bytes.")
+print("Configuring Dipsy...")
+
+r = configure_dipsy(config_bytes)
+if r==_STATUS_OK:
+	print("Dipsy configured!")
+elif r==_STATUS_NOT_DONE:
+	print("Error: Dipsy not configured.")
+elif r==_STATUS_NOT_PROGRAMMING:
+	print("Error: Dipsy didn't enter programming mode.")
+else:
+	print("Error unknown.")
+
