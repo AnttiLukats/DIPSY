@@ -34,7 +34,7 @@ OutputMedium3_Type=PublishToWeb
 OutputMedium4=Generate Files
 OutputMedium4_Type=GeneratedFiles
 OutputType1=Schematic Print
-OutputName1=SCH-DIPSY-02
+OutputName1=SCH-DIPSY-01
 OutputCategory1=Documentation
 OutputDocumentPath1=[Project Physical Documents]
 OutputVariantName1=TE0703
@@ -48,7 +48,7 @@ PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintS
 Configuration1_Name1=OutputConfigurationParameter1
 Configuration1_Item1=Record=SchPrintView|ShowNoERC=True|ShowParamSet=True|ShowProbe=True|ExpandDesignator=True|ExpandNetLabel=True|ExpandPort=False|ExpandSheetNum=False|ExpandDocNum=False
 OutputType2=BOM_PartType
-OutputName2=BOM-DIPSY-02
+OutputName2=BOM-DIPSY-01
 OutputCategory2=Report
 OutputDocumentPath2=
 OutputVariantName2=TE0703
@@ -76,7 +76,7 @@ Configuration2_Item7=
 Configuration2_Name8=VisibleOrder
 Configuration2_Item8=AN=55|Quantity=53|Designator=60|Comment=64|Description=78|Case=59|Value=59|Footprint=61|Revision=45|Variant=46|Trenz-Stock=42|Mixed=100|Preferred=100|Technology=100|Tolerance=100|Trenz-Article-Number=100|Voltage=100
 OutputType3=Assembly
-OutputName3=AD-DIPSY-02
+OutputName3=AD-DIPSY-01
 OutputCategory3=Assembly
 OutputDocumentPath3=
 OutputVariantName3=TE0703
@@ -118,7 +118,7 @@ Configuration3_Item14=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Ful
 Configuration3_Name15=OutputConfigurationParameter15
 Configuration3_Item15=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical2|Polygon=Full|PrintOutIndex=3|Record=PcbPrintLayer
 OutputType4=Gerber
-OutputName4=DIPSY-02
+OutputName4=DIPSY-01
 OutputCategory4=Fabrication
 OutputDocumentPath4=
 OutputVariantName4=
@@ -131,7 +131,7 @@ OutputDefault4=0
 Configuration4_Name1=OutputConfigurationParameter1
 Configuration4_Item1=AddToAllLayerClasses.Set= |AddToAllPlots.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean,16908294~1|CentrePlots=False|DrillDrawingSymbol=GraphicsSymbol|DrillDrawingSymbolSize=500000|EmbeddedApertures=True|FileComment= |FileComment= |FileSubject=Autodetect|FileSubject=Autodetect|FilmBorderSize=10000000|FilmXSize=200000000|FilmYSize=160000000|FlashAllFills=False|FlashPadShapes=True|G54OnApertureChange=False|GenerateDRCRulesFile=True|GenerateDRCRulesFile=True|GenerateReliefShapes=True|GerberUnit=Metric|GerberUnit=Metric|GerberX2Support=False|IncludeUnconnectedMidLayerPads=True|LayerClassesMirror.Set= |LayerClassesPlot.Set= |LeadingAndTrailingZeroesMode=SuppressLeadingZeroes|MaxApertureSize=2500000|MinusApertureTolerance=39|MinusApertureTolerance=39|Mirror.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean|MirrorDrillDrawingPlots=False|MirrorDrillGuidePlots=False|MirrorX2.Set= |MirrorX2GerberClass=False|NewFileNamesFormat=False|NoRegularPolygons=False|NumberOfDecimals=4|NumberOfDecimals=4|OptimizeChangeLocationCommands=True|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Panelize=False|Plot.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean,16973830~1,16973832~1,16973834~1,16777217~1,16777218~1,16777223~1,16842751~1,16973835~1,16973833~1,16973831~1,16908294~1|PlotPositivePlaneLayers=False|PlotUsedDrillDrawingLayerPairs=False|PlotUsedDrillGuideLayerPairs=False|PlotX2.Set=gfkProfile,gfkNPTH,gfkPTH|PlotX2GerberClass=False|PlusApertureTolerance=39|PlusApertureTolerance=39|Record=GerberView|SoftwareArcs=False|Sorted=False|Sorted=False
 OutputType5=NC Drill
-OutputName5=DIPSY-02
+OutputName5=DIPSY-01
 OutputCategory5=Fabrication
 OutputDocumentPath5=
 OutputVariantName5=
@@ -144,7 +144,7 @@ OutputDefault5=0
 Configuration5_Name1=OutputConfigurationParameter1
 Configuration5_Item1=BoardEdgeRoutToolDia=2000000|GenerateBoardEdgeRout=False|GenerateDrilledSlotsG85=False|GenerateEIADrillFile=False|GenerateSeparatePlatedNonPlatedFiles=False|NumberOfDecimals=4|NumberOfUnits=4|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Record=DrillView|ZeroesMode=SuppressTrailingZeroes|Units=Metric
 OutputType6=BOM_PartType
-OutputName6=PP-DIPSY-02
+OutputName6=PP-DIPSY-01
 OutputCategory6=Report
 OutputDocumentPath6=
 OutputVariantName6=
@@ -172,7 +172,7 @@ Configuration6_Item7=Designator=Up|Comment=Up|Footprint=Up
 Configuration6_Name8=VisibleOrder
 Configuration6_Item8=Comment=100|Description=100|Designator=100|Footprint=100|LibRef=100|Quantity=100|AN=100|Case=100|Mixed=100|Preferred=100|Technology=100|Tolerance=100|Trenz-Article-Number=100|Trenz-Stock=100|Value=100|Variant=100|Voltage=100|Center-X(mm)=100|Center-Y(mm)=100|Layer=100|Rotation=100
 OutputType7=PCB 3D Print
-OutputName7=3DT-DIPSY-02
+OutputName7=3DT-DIPSY-01
 OutputCategory7=Documentation
 OutputDocumentPath7=
 OutputVariantName7=
@@ -186,7 +186,7 @@ PageOptions7=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintS
 Configuration7_Name1=OutputConfigurationParameter1
 Configuration7_Item1=Record=Pcb3DPrintView|ResX=150|ResY=150|ViewX=7881890|ViewY=9666939|LookAtX=23559048|LookAtY=47258656|LookAtZ=0|QuatX=0|QuatY=0|QuatZ=0|QuatW=1|Zoom=8.63768768997094E-5|UnitsPercent=True|UnitsDPI=True|LockResAspect=True|ViewConfigType=.config_3d|CustomCamera=False|ViewFromTop=True|ViewConfig=RECORD\3Board\2CFGALL.CONFIGURATIONKIND\33\2CFGALL.CONFIGURATIONDESC\3Altium%203D%20Blue%20Configuration\2CFG3D.POSITIVETOPSOLDERMASK\3TRUE\2CFG3D.POSITIVEBOTTOMSOLDERMASK\3TRUE\2CFG3D.SHOWCOMPONENTBODIES\3TRUE\2CFG3D.SHOWCOMPONENTSTEPMODELS\3TRUE\2CFG3D.COMPONENTMODELPREFERENCE\30\2CFG3D.SHOWCOMPONENTSNAPMARKERS\3FALSE\2CFG3D.SHOWCOMPONENTAXES\3FALSE\2CFG3D.SHOWBOARDCORE\3TRUE\2CFG3D.SHOWBOARDPREPREG\3TRUE\2CFG3D.SHOWTOPSILKSCREEN\3TRUE\2CFG3D.SHOWBOTSILKSCREEN\3TRUE\2CFG3D.SHOWORIGINMARKER\3FALSE\2CFG3D.EYEDIST\32147483647\2CFG3D.SHOWCUTOUTS\3TRUE\2CFG3D.SHOWROUTETOOLPATH\3TRUE\2CFG3D.SHOWROOMS3D\3FALSE\2CFG3D.USESYSCOLORSFOR3D\3FALSE\2CFG3D.WORKSPACECOLOR\38553110\2CFG3D.BOARDCORECOLOR\313761015\2CFG3D.BOARDPREPREGCOLOR\30\2CFG3D.TOPSOLDERMASKCOLOR\37026967\2CFG3D.BOTSOLDERMASKCOLOR\37026967\2CFG3D.COPPERCOLOR\33323360\2CFG3D.TOPSILKSCREENCOLOR\315461355\2CFG3D.BOTSILKSCREENCOLOR\315461355\2CFG3D.WORKSPACELUMINANCEVARIATION\330\2CFG3D.WORKSPACECOLOROPACITY\31.000000\2CFG3D.BOARDCORECOLOROPACITY\30.850000\2CFG3D.BOARDPREPREGCOLOROPACITY\30.500000\2CFG3D.TOPSOLDERMASKCOLOROPACITY\30.830000\2CFG3D.BOTSOLDERMASKCOLOROPACITY\30.830000\2CFG3D.COPPERCOLOROPACITY\31.000000\2CFG3D.TOPSILKSCREENCOLOROPACITY\30.840000\2CFG3D.BOTSILKSCREENCOLOROPACITY\30.850000\2CFG3D.BOARDTHICKNESSSCALING\31.000000\2CFG3D.SHOWMECHANICALLAYERS\3FALSE\2CFG3D.MECHANICALLAYERSOPACITY\31.000000
 OutputType8=PCB 3D Print
-OutputName8=3DB-DIPSY-02
+OutputName8=3DB-DIPSY-01
 OutputCategory8=Documentation
 OutputDocumentPath8=
 OutputVariantName8=
@@ -200,7 +200,7 @@ PageOptions8=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintS
 Configuration8_Name1=OutputConfigurationParameter1
 Configuration8_Item1=Record=Pcb3DPrintView|ResX=150|ResY=150|ViewX=7881890|ViewY=9666939|LookAtX=23559048|LookAtY=47258656|LookAtZ=0|QuatX=0|QuatY=0|QuatZ=0|QuatW=1|Zoom=8.63768768997094E-5|UnitsPercent=True|UnitsDPI=True|LockResAspect=True|ViewConfigType=.config_3d|CustomCamera=False|ViewFromTop=False|ViewConfig=RECORD\3Board\2CFGALL.CONFIGURATIONKIND\33\2CFGALL.CONFIGURATIONDESC\3Altium%203D%20Blue%20Configuration\2CFG3D.POSITIVETOPSOLDERMASK\3TRUE\2CFG3D.POSITIVEBOTTOMSOLDERMASK\3TRUE\2CFG3D.SHOWCOMPONENTBODIES\3TRUE\2CFG3D.SHOWCOMPONENTSTEPMODELS\3TRUE\2CFG3D.COMPONENTMODELPREFERENCE\30\2CFG3D.SHOWCOMPONENTSNAPMARKERS\3FALSE\2CFG3D.SHOWCOMPONENTAXES\3FALSE\2CFG3D.SHOWBOARDCORE\3TRUE\2CFG3D.SHOWBOARDPREPREG\3TRUE\2CFG3D.SHOWTOPSILKSCREEN\3TRUE\2CFG3D.SHOWBOTSILKSCREEN\3TRUE\2CFG3D.SHOWORIGINMARKER\3FALSE\2CFG3D.EYEDIST\32147483647\2CFG3D.SHOWCUTOUTS\3TRUE\2CFG3D.SHOWROUTETOOLPATH\3TRUE\2CFG3D.SHOWROOMS3D\3FALSE\2CFG3D.USESYSCOLORSFOR3D\3FALSE\2CFG3D.WORKSPACECOLOR\38553110\2CFG3D.BOARDCORECOLOR\313761015\2CFG3D.BOARDPREPREGCOLOR\30\2CFG3D.TOPSOLDERMASKCOLOR\37026967\2CFG3D.BOTSOLDERMASKCOLOR\37026967\2CFG3D.COPPERCOLOR\33323360\2CFG3D.TOPSILKSCREENCOLOR\315461355\2CFG3D.BOTSILKSCREENCOLOR\315461355\2CFG3D.WORKSPACELUMINANCEVARIATION\330\2CFG3D.WORKSPACECOLOROPACITY\31.000000\2CFG3D.BOARDCORECOLOROPACITY\30.850000\2CFG3D.BOARDPREPREGCOLOROPACITY\30.500000\2CFG3D.TOPSOLDERMASKCOLOROPACITY\30.830000\2CFG3D.BOTSOLDERMASKCOLOROPACITY\30.830000\2CFG3D.COPPERCOLOROPACITY\31.000000\2CFG3D.TOPSILKSCREENCOLOROPACITY\30.840000\2CFG3D.BOTSILKSCREENCOLOROPACITY\30.850000\2CFG3D.BOARDTHICKNESSSCALING\31.000000\2CFG3D.SHOWMECHANICALLAYERS\3FALSE\2CFG3D.MECHANICALLAYERSOPACITY\31.000000
 OutputType9=ExportSTEP
-OutputName9=DIPSY-02
+OutputName9=DIPSY-01
 OutputCategory9=Export
 OutputDocumentPath9=
 OutputVariantName9=

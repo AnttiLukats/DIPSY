@@ -1,0 +1,7 @@
+AN,Quantity,Designator,Comment,Description,Case,Value,Footprint,Revision,Variant,Trenz-Stock,Mixed,Preferred,Technology,Tolerance,Trenz-Article-Number,Voltage
+
+"23453","2","C1, C2","1µF","KON 1µF 6.3V X5R SMD 10%","1005 (0402)","1u","CAPC1005X55N","02","","","SMT","Yes","X5R","10%","","6.3"
+"","2","IC1, U1","VREG-SOT23-3-MC, UL1K","VREG-SOT23-3-MC, [NoValue]","SOT23","VREG-SOT23-3-MC","SOT23, BGA16C35P4X4_140X140X100","02","","","","","","","",""
+"23162","2","J1, J2","Pin Header 2.54 1Row 4Pins","Stiftleiste gerade 1-reihig, 4pol.","","","STIFTLEISTE2_54 OG 1R-4","02","","Yes","THT","","","","",""
+"22334","1","J6","Pin Header 2.54 2Row 6Pins","Stiftleiste gerade 2-reihig, 6pol.","","","STIFTLEISTE2_54 OG 2R-6","02","","Yes","THT","","","","",""
+"22750","1","R1","10K","WID SMD 10K 1% 0,063W","1005 (0402)","10K","RESC1005X40N","02","","","SMT","Yes","","1%","",""

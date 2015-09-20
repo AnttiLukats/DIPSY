@@ -1,0 +1,221 @@
+*************************************************************
+FileName = DIPSY-02.GBR
+AutoAperture = True
+*************************************************************
+Generating : L 01 (Top)
+      File : DIPSY-02.GTL
+
+    Adding Layer      : L 01 (Top)
+
+    Adding Layer      : Mechanical 6
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+*************************************************************
+
+*************************************************************
+Generating : L 02 GND
+      File : DIPSY-02.G1
+
+    Adding Layer      : L 02 GND
+
+    Adding Layer      : Mechanical 6
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D18
+    D19
+    D20
+    D21
+*************************************************************
+
+*************************************************************
+Generating : L 03 PWR
+      File : DIPSY-02.G2
+
+    Adding Layer      : L 03 PWR
+
+    Adding Layer      : Mechanical 6
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D18
+    D19
+    D20
+    D21
+*************************************************************
+
+*************************************************************
+Generating : L 04 (Bot)
+      File : DIPSY-02.GBL
+
+    Adding Layer      : L 04 (Bot)
+
+    Adding Layer      : Mechanical 6
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D12
+    D13
+    D14
+    D15
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : DIPSY-02.GTO
+
+    Adding Layer      : Top Overlay
+
+    Adding Layer      : Mechanical 6
+
+
+Used DCodes :
+    D12
+    D15
+    D24
+    D25
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : DIPSY-02.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Mechanical 6
+
+    Adding Layer      : L 01 (Top)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : DIPSY-02.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Mechanical 6
+
+    Adding Layer      : L 01 (Top)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D18
+    D19
+    D26
+    D27
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : DIPSY-02.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Mechanical 6
+
+    Adding Layer      : L 04 (Bot)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D12
+    D18
+    D19
+    D22
+    D26
+    D27
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : DIPSY-02.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Mechanical 6
+
+    Adding Layer      : L 04 (Bot)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D12
+    D22
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : DIPSY-02.GBO
+
+    Adding Layer      : Bottom Overlay
+
+    Adding Layer      : Mechanical 6
+
+
+Used DCodes :
+    D12
+    D15
+    D24
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 6
+      File : DIPSY-02.GM6
+
+    Adding Layer      : Mechanical 6
+
+    Adding Layer      : Mechanical 6
+
+
+Used DCodes :
+    D12
+*************************************************************
+

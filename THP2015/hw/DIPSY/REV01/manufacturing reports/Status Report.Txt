@@ -1,10 +1,10 @@
-Output: DIPSY-02
+Output: DIPSY-01
 Type  : ExportSTEP
 From  : Variant [[No Variations]] of PCB Document [DIPSY_UL1K16.PcbDoc]
-   Generated File[DIPSY-02.step]
+   Generated File[DIPSY-01.step]
 
 
 Files Generated   : 1
 Documents Printed : 0
 
-Finished Output Generation At 15:52:55 On 20.09.2015
+Finished Output Generation At 7:52:26 PM On 8/17/2015
