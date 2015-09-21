@@ -1,0 +1,27 @@
+
+Project: TE0888
+PCB gerber & drill files: LP0888
+Version: 01
+
+PCB thinkness: 1,6mm
+Layers: 4
+PCB Layerstack: Standart Brandner's  layerstack 
+
+Layer order: GTL, G1,  ...  GBL
+Outline: GM6
+
+Silkscreen Top: white
+Silkscreen Bot: white
+Solder mask: green
+
+
+
+Panel info: 4 PCB's in one panel
+Previous order: -
+
+Notes: 
+	1) It is allowed to add metal to the panel frame.
+
+
+Quantity: 1 Brandner's production panel.
+

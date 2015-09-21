@@ -1,0 +1,10 @@
+Output: TE0888-02
+Type  : ExportSTEP
+From  : PCB Document [TE0888.PcbDoc]
+   Generated File[TE0888-02.step]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 22:24:18 On 21.09.2015
